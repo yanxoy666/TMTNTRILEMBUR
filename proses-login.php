@@ -1,7 +1,7 @@
+```php
 <?php
 session_start();
 
-// 1. Koneksi ke Database (Gunakan MySQLi sesuai kodingan awalmu)
 $host = "localhost";
 $user = "root";
 $pass = "";
@@ -14,46 +14,50 @@ if (!$koneksi) {
 }
 
 if (isset($_POST['login'])) {
+
     $username = mysqli_real_escape_string($koneksi, $_POST['username']);
     $password = $_POST['password'];
 
-    // Cari username di database
-    $query  = "SELECT * FROM users WHERE username = '$username'";
+    $query = "SELECT * FROM users WHERE username='$username'";
     $result = mysqli_query($koneksi, $query);
 
-    // VERIFIKASI 1: Cek apakah akun terdaftar
-    if (mysqli_num_rows($result) === 0) {
-        $_SESSION['error'] = "Gagal login. Username tidak ditemukan atau belum membuat akun!";
-        header("Location: login.php");
-        exit();
-    } else {
+    if (mysqli_num_rows($result) > 0) {
+
         $row = mysqli_fetch_assoc($result);
-        
-        // VERIFIKASI 2: Cek password (sudah sinkron dengan password_hash)
-        if (password_verify($password, $row['password'])) {
-            
-            // Login Berhasil! Simpan data ke Session
+
+        // Cek password hash ATAU password biasa
+        if (
+            password_verify($password, $row['password']) ||
+            $password === $row['password']
+        ) {
+
             $_SESSION['user_id']  = $row['id'];
             $_SESSION['username'] = $row['username'];
-            $_SESSION['role']     = $row['role']; // Simpan role (admin / user)
+            $_SESSION['role']     = $row['role'];
 
-            // ALUR REDIRECT: Cek role akun yang login
             if ($row['role'] === 'admin') {
-                // Jika admin, arahkan ke dashboard admin
-                header("Location: admin/dashboard.php"); 
+                header("Location: admin/dashboard.php");
             } else {
-                // Jika user biasa, arahkan ke halaman utama/home
-                header("Location: index.php"); 
+                header("Location: index.php");
             }
             exit();
 
         } else {
+
             $_SESSION['error'] = "Password yang Anda masukkan salah!";
             header("Location: login.php");
             exit();
         }
+
+    } else {
+
+        $_SESSION['error'] = "Username tidak ditemukan!";
+        header("Location: login.php");
+        exit();
     }
+
 } else {
+
     header("Location: login.php");
     exit();
 }
