@@ -6,6 +6,9 @@
     <title>CabaiDomba Farm - Pertanian Modern</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+<?php
+session_start();
+?>
 <body class="page-transition">
 
     <?php include 'komponen/navbar.php'; ?>
@@ -41,6 +44,25 @@
             </div>
         </div>
     </div>
+
+    <section class="founder-section">
+    <div class="container">
+        <h2 class="founder-title">Founder Team</h2>
+        <div class="founder-line"></div>
+        <div class="founder-grid">
+            <div class="founder-card animate-on-scroll">
+                <img src="img/download.jpg" alt="Adlex">
+                <h3>Adlex</h3>
+                <p>Chief Executive Officer</p>
+            </div>
+            <div class="founder-card animate-on-scroll">
+                <img src="assets/img/download.jpg" alt="Yansoy">
+                <h3>Yansoy</h3>
+                <p>Head of Operations</p>
+            </div>
+        </div>
+    </div>
+</section>
 
     <?php include 'komponen/footer.php'; ?>
     <script src="js/main.js"></script>

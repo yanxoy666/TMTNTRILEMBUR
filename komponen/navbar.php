@@ -8,8 +8,30 @@
         <li><a href="mitra.php">Mitra</a></li>
         <li><a href="galeri.php">Galeri</a></li>
         <li><a href="produk.php">Produk</a></li>
-        <li><a href="login.php" class="btn-login">Login Admin</a></li>
+        
+       <?php if(isset($_SESSION['user_id'])): ?>
+
+    <li class="user-info">
+        👤 <?= htmlspecialchars($_SESSION['username']); ?>
+    </li>
+
+    <li>
+        <a href="logout.php" class="btn-logout">
+            Logout
+        </a>
+    </li>
+
+<?php else: ?>
+
+    <li>
+        <a href="login.php" class="btn-login">
+            Login
+        </a>
+    </li>
+
+<?php endif; ?>
     </ul>
+    
     <div class="burger">
         <div class="line1"></div>
         <div class="line2"></div>
