@@ -12,7 +12,7 @@
 
     <section class="hero">
         <div class="hero-content animate-on-scroll">
-            <h1>Kepedasan Alami, Kualitas Tinggi</h1>
+            <h1>Selamat Datang Di TumbuTani.Nusantara</h1>
             <p>Pusat inovasi dan budidaya Cabai Domba terbaik di Indonesia dengan metode pertanian berkelanjutan.</p>
             <a href="produk.php" class="btn-hero">Lihat Produk Kami</a>
         </div>

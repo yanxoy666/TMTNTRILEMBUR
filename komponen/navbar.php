@@ -1,6 +1,6 @@
 <nav class="navbar">
     <div class="logo">
-        <a href="index.php">🌶️ CabaiDomba<span>Farm</span></a>
+        <a href="index.php">🌶️ TumbuTani.<span>Nusantara</span></a>
     </div>
     <ul class="nav-links">
         <li><a href="index.php">Beranda</a></li>
