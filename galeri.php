@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galeri - CabaiDomba Farm</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/galeri.css">
     <style>
         .embed-container { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; margin-top: 30px; }
         .embed-box { background: #eee; width: 100%; max-width: 320px; height: 500px; display: flex; align-items: center; justify-content: center; border-radius: 10px; color: #888; text-align: center; padding: 20px;}

@@ -170,3 +170,80 @@ body {
     .timeline-item::after { left: 21px; }
     .right { left: 0; }
 }
+
+/* ======================
+   FOUNDER TEAM
+====================== */
+
+.founder-section{
+    padding:100px 20px;
+    background:#f8f9fa;
+}
+
+.founder-title{
+    text-align:center;
+    font-size:3rem;
+    font-weight:700;
+    color:#0d1b3d;
+}
+
+.founder-line{
+    width:70px;
+    height:4px;
+    background:#2E7D32;
+    margin:20px auto 60px;
+    border-radius:10px;
+}
+
+.founder-grid{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    flex-wrap:wrap;
+}
+
+.founder-card{
+    background:white;
+    width:350px;
+    padding:50px 30px;
+    text-align:center;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.founder-card:hover{
+    transform:translateY(-10px);
+}
+
+.founder-card img{
+    width:160px;
+    height:160px;
+    object-fit:cover;
+    border-radius:50%;
+    margin-bottom:25px;
+}
+
+.founder-card h3{
+    font-size:2rem;
+    color:#0d1b3d;
+    margin-bottom:10px;
+}
+
+.founder-card p{
+    color:#2E7D32;
+    font-size:1.1rem;
+}
+
+@media(max-width:768px){
+
+    .founder-card{
+        width:100%;
+        max-width:350px;
+    }
+
+    .founder-title{
+        font-size:2rem;
+    }
+
+}
