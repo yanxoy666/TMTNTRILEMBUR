@@ -8,7 +8,7 @@
         <li><a href="mitra.php">Mitra</a></li>
         <li><a href="galeri.php">Galeri</a></li>
         <li><a href="produk.php">Produk</a></li>
-        <li><a href="admin/login.php" class="btn-login">Login Admin</a></li>
+        <li><a href="login.php" class="btn-login">Login Admin</a></li>
     </ul>
     <div class="burger">
         <div class="line1"></div>

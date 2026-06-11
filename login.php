@@ -2,23 +2,49 @@
 session_start();
 include '../config/koneksi.php';
 
-if(isset($_SESSION['admin'])) {
-    header("Location: dashboard.php");
+// Jika sudah login sebelumnya, langsung lempar sesuai hak aksesnya
+if(isset($_SESSION['user_id'])) {
+    if($_SESSION['role'] === 'admin') {
+        header("Location: dashboard.php");
+    } else {
+        header("Location: ../index.php"); // Atau halaman katalog user
+    }
     exit;
 }
 
 $error = '';
 if(isset($_POST['login'])) {
     $username = $_POST['username'];
-    $password = $_POST['password']; // <-- Tambahkan titik koma di sini
+    $password = $_POST['password']; 
 
-    $stmt = $pdo->prepare("SELECT * FROM admin WHERE username = ? AND password = ?");
-    $stmt->execute([$username, $password]);
+    // Mencari di tabel 'users' berdasarkan username yang diinput
+    $stmt = $pdo->prepare("SELECT * FROM users WHERE username = ?");
+    $stmt->execute([$username]);
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
     
-    if($stmt->rowCount() > 0) {
-        $_SESSION['admin'] = $username;
-        header("Location: dashboard.php");
-        exit;
+    // Memeriksa apakah user ditemukan
+    if($user) {
+        // NOTE: Idealnya menggunakan password_verify jika di-hash. 
+        // Jika masih teks biasa untuk sementara, gunakan: if($password === $user['password'])
+        if($password === $user['password']) {
+            
+            // Simpan data penting ke dalam Session
+            $_SESSION['user_id']   = $user['id'];
+            $_SESSION['username']  = $user['username'];
+            $_SESSION['fullname']  = $user['fullname'];
+            $_SESSION['role']      = $user['role']; // Menyimpan 'admin' atau 'user'
+            
+            // Deteksi Role untuk pengalihan halaman
+            if($user['role'] === 'admin') {
+                header("Location: dashboard.php"); // Sesuai perintah Anda, masuk ke dashboard admin
+            } else {
+                header("Location: ../index.php");  // User biasa diarahkan ke landing page / katalog belanja
+            }
+            exit;
+            
+        } else {
+            $error = "Username atau password salah!";
+        }
     } else {
         $error = "Username atau password salah!";
     }
@@ -28,7 +54,7 @@ if(isset($_POST['login'])) {
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Login Admin</title>
+    <title>Login - TumbuTani Nusantara</title>
     <style>
         body { font-family: 'Poppins', sans-serif; background: #FAFAFA; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
         .login-box { background: white; padding: 40px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); width: 100%; max-width: 400px; text-align: center; }
@@ -41,7 +67,7 @@ if(isset($_POST['login'])) {
 </head>
 <body>
     <div class="login-box">
-        <h2>Admin Login</h2>
+        <h2>TumbuTani Login</h2>
         <?php if($error): ?><div class="error"><?= $error ?></div><?php endif; ?>
         <form method="POST">
             <input type="text" name="username" placeholder="Username" required>
