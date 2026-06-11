@@ -6,6 +6,9 @@
     <title>CabaiDomba Farm - Pertanian Modern</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+<?php
+session_start();
+?>
 <body class="page-transition">
 
     <?php include 'komponen/navbar.php'; ?>
