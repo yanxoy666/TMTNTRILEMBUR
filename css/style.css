@@ -98,7 +98,7 @@ body {
 .hero h1 { font-size: 3rem; margin-bottom: 20px; }
 .hero p { font-size: 1.2rem; margin-bottom: 30px; }
 .btn-hero {
-    background-color: var(--accent-orange);
+    background-color: var(--primary-green);
     color: var(--white);
     padding: 12px 30px;
     text-decoration: none;
@@ -169,4 +169,77 @@ body {
     .timeline-item { width: 100%; padding-left: 70px; padding-right: 25px; }
     .timeline-item::after { left: 21px; }
     .right { left: 0; }
+}
+
+/* =========================
+   FOUNDER TEAM
+========================= */
+
+.founder-section{
+    padding:80px 20px;
+    background:#f8f9fa;
+}
+
+.founder-title{
+    text-align:center;
+    font-size:2.8rem;
+    font-weight:700;
+    color:#2E7D32;
+    margin-bottom:15px;
+}
+
+.founder-line{
+    width:80px;
+    height:4px;
+    background:#D84315;
+    margin:0 auto 50px;
+    border-radius:10px;
+}
+
+.founder-grid{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    flex-wrap:wrap;
+}
+
+.founder-card{
+    width:320px;
+    background:#fff;
+    border-radius:15px;
+    padding:35px 25px;
+    text-align:center;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    transition:all .3s ease;
+}
+
+.founder-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
+}
+
+.founder-card img{
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    object-fit:cover;
+    border:5px solid #2E7D32;
+    margin-bottom:20px;
+}
+
+.founder-card h3{
+    font-size:1.8rem;
+    color:#2E7D32;
+    margin-bottom:10px;
+}
+
+.founder-card p{
+    color:#666;
+    font-size:1rem;
+    margin-bottom:10px;
+}
+
+.founder-role{
+    color:#D84315;
+    font-weight:600;
 }

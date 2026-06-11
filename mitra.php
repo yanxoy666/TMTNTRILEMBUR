@@ -6,6 +6,9 @@
     <title>Mitra & Program - CabaiDomba Farm</title>
     <link rel="stylesheet" href="css/mitra.css">
 </head>
+<?php
+session_start();
+?>
 <body class="page-transition">
 
     <?php include 'komponen/navbar.php'; ?>
