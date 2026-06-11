@@ -1,6 +1,6 @@
 <?php
 session_start();
-include '../config/koneksi.php';
+include 'config/koneksi.php';
 
 // Jika sudah login sebelumnya, langsung lempar sesuai hak aksesnya
 if(isset($_SESSION['user_id'])) {
