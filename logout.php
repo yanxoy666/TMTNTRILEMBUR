@@ -1,9 +1,11 @@
 <?php
 session_start();
-session_unset();
-session_destroy(); // Menghapus semua session
 
-// Setelah logout, arahkan kembali ke menu login
-header("Location: login.php");
-exit;
+// Hapus semua session
+session_unset();
+session_destroy();
+
+// Kembali ke halaman utama
+header("Location: index.php");
+exit();
 ?>
