@@ -1,80 +1,56 @@
 <?php
 session_start();
-include 'config/koneksi.php';
 
-// Jika sudah login sebelumnya, langsung lempar sesuai hak aksesnya
-if(isset($_SESSION['user_id'])) {
-    if($_SESSION['role'] === 'admin') {
-        header("Location: dashboard.php");
-    } else {
-        header("Location: ../index.php"); // Atau halaman katalog user
-    }
-    exit;
-}
-
-$error = '';
-if(isset($_POST['login'])) {
-    $username = $_POST['username'];
-    $password = $_POST['password']; 
-
-    // Mencari di tabel 'users' berdasarkan username yang diinput
-    $stmt = $pdo->prepare("SELECT * FROM users WHERE username = ?");
-    $stmt->execute([$username]);
-    $user = $stmt->fetch(PDO::FETCH_ASSOC);
-    
-    // Memeriksa apakah user ditemukan
-    if($user) {
-        // NOTE: Idealnya menggunakan password_verify jika di-hash. 
-        // Jika masih teks biasa untuk sementara, gunakan: if($password === $user['password'])
-        if($password === $user['password']) {
-            
-            // Simpan data penting ke dalam Session
-            $_SESSION['user_id']   = $user['id'];
-            $_SESSION['username']  = $user['username'];
-            $_SESSION['fullname']  = $user['fullname'];
-            $_SESSION['role']      = $user['role']; // Menyimpan 'admin' atau 'user'
-            
-            // Deteksi Role untuk pengalihan halaman
-            if($user['role'] === 'admin') {
-                header("Location: dashboard.php"); // Sesuai perintah Anda, masuk ke dashboard admin
-            } else {
-                header("Location: ../index.php");  // User biasa diarahkan ke landing page / katalog belanja
-            }
-            exit;
-            
-        } else {
-            $error = "Username atau password salah!";
-        }
-    } else {
-        $error = "Username atau password salah!";
-    }
+// Cek apakah ada pesan error dari proses login
+$error_message = "";
+if (isset($_SESSION['error'])) {
+    $error_message = $_SESSION['error'];
+    unset($_SESSION['error']); // Hapus pesan setelah ditampilkan
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Login - TumbuTani Nusantara</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - CabaiDomba Farm</title>
+    <link rel="stylesheet" href="css/style.css">
     <style>
-        body { font-family: 'Poppins', sans-serif; background: #FAFAFA; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
-        .login-box { background: white; padding: 40px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); width: 100%; max-width: 400px; text-align: center; }
-        .login-box h2 { color: #2E7D32; margin-bottom: 20px; }
-        input { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box; }
-        button { width: 100%; padding: 10px; background: #2E7D32; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; }
-        button:hover { background: #D84315; }
-        .error { color: red; margin-bottom: 10px; font-size: 14px; }
+        .alert-error {
+            color: #721c24;
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+        }
     </style>
 </head>
 <body>
-    <div class="login-box">
-        <h2>TumbuTani Login</h2>
-        <?php if($error): ?><div class="error"><?= $error ?></div><?php endif; ?>
-        <form method="POST">
-            <input type="text" name="username" placeholder="Username" required>
-            <input type="password" name="password" placeholder="Password" required>
-            <button type="submit" name="login">Masuk</button>
+
+    <div class="container" style="max-width: 400px; margin-top: 100px;">
+        <h2>Login CabaiDomba Farm</h2>
+        
+        <?php if (!empty($error_message)): ?>
+            <div class="alert-error">
+                <?php echo $error_message; ?>
+            </div>
+        <?php endif; ?>
+
+        <form action="proses-login.php" method="POST">
+            <div class="form-group">
+                <label>Username</label>
+                <input type="text" name="username" required class="form-control">
+            </div>
+            <div class="form-group" style="margin-top: 10px;">
+                <label>Password</label>
+                <input type="password" name="password" required class="form-control">
+            </div>
+            <button type="submit" name="login" style="margin-top: 15px;" class="btn-hero">Login</button>
         </form>
-        <a href="../index.php" style="display:block; margin-top:15px; color:#666; text-decoration:none; font-size:14px;">&larr; Kembali ke Web</a>
+        <p style="margin-top: 15px;">Belum punya akun? <a href="register.php">Daftar di sini</a></p>
     </div>
+
 </body>
 </html>
