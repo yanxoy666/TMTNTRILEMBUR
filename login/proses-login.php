@@ -25,38 +25,36 @@ if (isset($_POST['login'])) {
         $row = mysqli_fetch_assoc($result);
 
         // Cek password hash ATAU password biasa
-        if (
-            password_verify($password, $row['password']) ||
-            $password === $row['password']
-        ) {
+        if (password_verify($password, $row['password']) || $password === $row['password']) {
 
+            // Simpan data ke session
             $_SESSION['user_id']  = $row['id'];
             $_SESSION['username'] = $row['username'];
             $_SESSION['role']     = $row['role'];
 
-            if ($row['role'] === 'admin') {
-                header("Location: ../admin/dashboard.php");
-            } else {
+            
+            // Pengecekan Role (Gunakan strtolower untuk mengantisipasi "Admin" / "ADMIN")
+            if (strtolower($row['role']) === 'admin') {
+            header("Location: /TMTNTRILEMBUR/admin/dashboard.php");
+                exit();       
+                 } else {
                 header("Location: ../index.php");
             }
-            exit();
+            exit(); // Pastikan exit setelah header redirect
 
         } else {
-
             $_SESSION['error'] = "Password yang Anda masukkan salah!";
             header("Location: login.php");
             exit();
         }
 
     } else {
-
         $_SESSION['error'] = "Username tidak ditemukan!";
         header("Location: login.php");
         exit();
     }
 
 } else {
-
     header("Location: login.php");
     exit();
 }
