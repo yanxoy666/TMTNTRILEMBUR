@@ -1,4 +1,3 @@
-```php
 <?php
 session_start();
 
@@ -36,9 +35,9 @@ if (isset($_POST['login'])) {
             $_SESSION['role']     = $row['role'];
 
             if ($row['role'] === 'admin') {
-                header("Location: admin/dashboard.php");
+                header("Location: ../admin/dashboard.php");
             } else {
-                header("Location: index.php");
+                header("Location: ../index.php");
             }
             exit();
 

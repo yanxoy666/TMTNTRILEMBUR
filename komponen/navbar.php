@@ -16,7 +16,7 @@
     </li>
 
     <li>
-        <a href="logout.php" class="btn-logout">
+        <a href="login/logout.php" class="btn-logout">
             Logout
         </a>
     </li>
@@ -24,7 +24,7 @@
 <?php else: ?>
 
     <li>
-        <a href="login.php" class="btn-login">
+        <a href="login/login.php" class="btn-login">
             Login
         </a>
     </li>
