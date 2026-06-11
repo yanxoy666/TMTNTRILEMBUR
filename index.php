@@ -56,7 +56,7 @@ session_start();
                 <p>Chief Executive Officer</p>
             </div>
             <div class="founder-card animate-on-scroll">
-                <img src="assets/img/download.jpg" alt="Yansoy">
+                <img src="img/Capture.PNG" alt="Yansoy">
                 <h3>Yansoy</h3>
                 <p>Head of Operations</p>
             </div>

@@ -6,6 +6,9 @@
     <title>Tentang Kami - CabaiDomba Farm</title>
     <link rel="stylesheet" href="css/tentang-kami.css">
 </head>
+<?php
+session_start();
+?>
 <body class="page-transition">
 
     <?php include 'komponen/navbar.php'; ?>
