@@ -8,7 +8,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Produk - CabaiDomba Farm</title>
+    <title>Produk - TumbuTani Nusantara</title>
     <link rel="stylesheet" href="css/produk.css">
 </head>
 <body class="page-transition">

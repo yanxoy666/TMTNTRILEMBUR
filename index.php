@@ -22,7 +22,7 @@ session_start();
     </section>
 
     <div class="container">
-        <h2 class="section-title animate-on-scroll">Mengapa Memilih CabaiDomba Farm?</h2>
+        <h2 class="section-title animate-on-scroll">Mengapa Memilih TumbuTani Nusantara</h2>
         <div class="grid-cards">
             <div class="card animate-on-scroll">
                 <div class="card-body">
