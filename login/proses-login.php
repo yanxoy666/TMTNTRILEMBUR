@@ -1,61 +1,50 @@
 <?php
 session_start();
+include "../config/koneksi.php";
 
-$host = "localhost";
-$user = "root";
-$pass = "";
-$db   = "tumbutani_nusantara";
+if(isset($_POST['login'])) {
 
-$koneksi = mysqli_connect($host, $user, $pass, $db);
-
-if (!$koneksi) {
-    die("Koneksi gagal: " . mysqli_connect_error());
-}
-
-if (isset($_POST['login'])) {
-
-    $username = mysqli_real_escape_string($koneksi, $_POST['username']);
+    $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $query = "SELECT * FROM users WHERE username='$username'";
-    $result = mysqli_query($koneksi, $query);
+    // Mengambil data user berdasarkan username
+    $stmt = $pdo->prepare("SELECT * FROM users WHERE username = ?");
+    $stmt->execute([$username]);
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    if (mysqli_num_rows($result) > 0) {
+    // --- BAGIAN DEBUGER VAR_DUMP SUDAH DIHAPUS ---
 
-        $row = mysqli_fetch_assoc($result);
+    if($user){
 
-        // Cek password hash ATAU password biasa
-        if (password_verify($password, $row['password']) || $password === $row['password']) {
+        // Cek password (mendukung password_hash maupun plain text untuk testing)
+        if(password_verify($password, $user['password']) || $password === $user['password']){
 
-            // Simpan data ke session
-            $_SESSION['user_id']  = $row['id'];
-            $_SESSION['username'] = $row['username'];
-            $_SESSION['role']     = $row['role'];
+            $_SESSION['user_id'] = $user['id'];
+            $_SESSION['username'] = $user['username'];
+            $_SESSION['role'] = $user['role'];
 
-            
-            // Pengecekan Role (Gunakan strtolower untuk mengantisipasi "Admin" / "ADMIN")
-            if (strtolower($row['role']) === 'admin') {
-            header("Location: /TMTNTRILEMBUR/admin/dashboard.php");
-                exit();       
-                 } else {
+            // Arahkan sesuai role
+            if(strtolower($user['role']) === 'admin'){
+                header("Location: ../admin/dashboard.php");
+            } else {
                 header("Location: ../index.php");
             }
-            exit(); // Pastikan exit setelah header redirect
+            exit;
 
         } else {
-            $_SESSION['error'] = "Password yang Anda masukkan salah!";
+            $_SESSION['error'] = "Password salah!";
             header("Location: login.php");
-            exit();
+            exit;
         }
 
     } else {
         $_SESSION['error'] = "Username tidak ditemukan!";
         header("Location: login.php");
-        exit();
+        exit;
     }
 
 } else {
+    // Jika diakses langsung tanpa tekan tombol login
     header("Location: login.php");
-    exit();
+    exit;
 }
-?>

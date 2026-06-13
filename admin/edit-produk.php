@@ -76,46 +76,79 @@ if(isset($_POST['update'])){
 }
 ?>
 
-<h2>Edit Produk</h2>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Produk</title>
 
-<form method="POST" enctype="multipart/form-data">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/edit-produk.css">
+</head>
 
-<p>Nama Produk</p>
-<input type="text" name="name"
-value="<?= $produk['name'] ?>" required>
+<body>
 
-<p>Harga</p>
-<input type="number" name="price"
-value="<?= $produk['price'] ?>" required>
+<?php include "sidebar.php"; ?>
 
-<p>Deskripsi</p>
-<textarea name="description"><?= $produk['description'] ?></textarea>
+<div class="main">
 
-<p>Stok</p>
-<input type="number" name="stock"
-value="<?= $produk['stock'] ?>" required>
+    <div class="form-container">
+        <h2>🌱 Edit Produk TumbuTani</h2>
+<p style="color:#666;margin-bottom:20px;">
+Perbarui informasi produk yang tersedia di marketplace.
+</p>
+        <h2>✏️ Edit Produk</h2>
 
-<p>Status</p>
+        <form method="POST" enctype="multipart/form-data">
 
-<select name="status">
-    <option value="Ready"
-    <?= $produk['status']=='Ready'?'selected':'' ?>>
-    Ready
-    </option>
+            <label>Nama Produk</label>
+            <input type="text" name="name"
+            value="<?= $produk['name'] ?>" required>
 
-    <option value="Tidak Ready"
-    <?= $produk['status']=='Tidak Ready'?'selected':'' ?>>
-    Tidak Ready
-    </option>
-</select>
+            <label>Harga</label>
+            <input type="number" name="price"
+            value="<?= $produk['price'] ?>" required>
 
-<p>Foto Baru (Opsional)</p>
-<input type="file" name="image">
+            <label>Deskripsi</label>
+            <textarea name="description"><?= $produk['description'] ?></textarea>
 
-<br><br>
+            <label>Stok</label>
+            <input type="number" name="stock"
+            value="<?= $produk['stock'] ?>" required>
 
-<button type="submit" name="update">
-Update Produk
-</button>
+            <label>Status</label>
 
-</form>
+            <select name="status">
+
+                <option value="Ready"
+                <?= $produk['status']=='Ready' ? 'selected' : '' ?>>
+                    Ready
+                </option>
+
+                <option value="Tidak Ready"
+                <?= $produk['status']=='Tidak Ready' ? 'selected' : '' ?>>
+                    Tidak Ready
+                </option>
+
+            </select>
+
+            <label>Foto Saat Ini</label>
+
+            <div class="preview">
+                <img src="../assets/<?= $produk['image'] ?>">
+            </div>
+
+            <label>Foto Baru (Opsional)</label>
+            <input type="file" name="image">
+
+            <button type="submit" name="update" class="btn-update">
+                💾 Update Produk
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>

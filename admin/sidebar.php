@@ -4,7 +4,7 @@
         TumbuTani
     </div>
 
-    <a href="dashboard.php">🏠 Dashboard</a>
+    <a href="dashboard.php" class="active">🏠 Dashboard</a>
 
     <a href="produk.php">📦 Produk</a>
 
@@ -12,6 +12,8 @@
 
     <a href="ulasan.php">⭐ Ulasan</a>
 
-    <a href="../logout.php">🚪 Logout</a>
+    <a href="user.php">👤 User</a>
+
+    <a href="../login/logout.php">🚪 Logout</a>
 
 </div>

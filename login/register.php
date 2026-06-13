@@ -1,7 +1,6 @@
 <?php
 session_start();
-include 'config/koneksi.php'; // Pastikan file ini menggunakan PDO karena kode bawah menggunakan $pdo
-
+include "../config/koneksi.php";
 if(isset($_SESSION['user_id'])) {
     // Jika sudah login, cek rolenya untuk redirect ke tempat yang benar
     if($_SESSION['role'] === 'admin') {

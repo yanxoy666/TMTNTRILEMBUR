@@ -18,139 +18,47 @@ ORDER BY pesanan.id DESC
 <html>
 <head>
     <title>Data Pesanan</title>
+<head>
+    <title>Data Pesanan</title>
 
-    <style>
-        body{
-            font-family: Arial, sans-serif;
-            padding:20px;
-        }
-
-        h2{
-            margin-bottom:20px;
-        }
-
-        table{
-            width:100%;
-            border-collapse: collapse;
-        }
-
-        th, td{
-            border:1px solid #ddd;
-            padding:10px;
-            text-align:center;
-        }
-
-        th{
-            background:#2E7D32;
-            color:white;
-        }
-
-        select{
-            padding:5px;
-        }
-
-        button{
-            padding:5px 10px;
-            background:#2E7D32;
-            color:white;
-            border:none;
-            cursor:pointer;
-        }
-
-        button:hover{
-            background:#1B5E20;
-        }
-
-        .back{
-            display:inline-block;
-            margin-bottom:15px;
-        }
-    </style>
-
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/pesanan.css">
 </head>
-<body>
+</head>
+<<body>
 
-<a href="dashboard.php" class="back">
-    ← Kembali ke Dashboard
-</a>
+<?php include 'sidebar.php'; ?>
 
-<h2>Data Pesanan</h2>
+<div class="main">
 
-<table>
+    <a href="dashboard.php" class="back">
+        ← Kembali ke Dashboard
+    </a>
 
-<tr>
-    <th>ID</th>
-    <th>Produk</th>
-    <th>Pembeli</th>
-    <th>No HP</th>
-    <th>Jumlah</th>
-    <th>Total Harga</th>
-    <th>Status</th>
-    <th>Tanggal</th>
-</tr>
+    <h2>Data Pesanan</h2>
 
-<?php while($row = $query->fetch(PDO::FETCH_ASSOC)): ?>
+    <div class="table-container">
 
-<tr>
+        <table>
 
-    <td><?= $row['id'] ?></td>
+            <tr>
+                <th>ID</th>
+                <th>Produk</th>
+                <th>Pembeli</th>
+                <th>No HP</th>
+                <th>Jumlah</th>
+                <th>Total Harga</th>
+                <th>Status</th>
+                <th>Tanggal</th>
+            </tr>
 
-    <td><?= $row['nama_produk'] ?></td>
+            <!-- isi looping pesanan tetap -->
 
-    <td><?= $row['nama_pembeli'] ?></td>
+        </table>
 
-    <td><?= $row['no_hp'] ?></td>
+    </div>
 
-    <td><?= $row['jumlah'] ?></td>
-
-    <td>
-        Rp <?= number_format($row['total_harga'],0,',','.') ?>
-    </td>
-
-    <td>
-
-        <form action="update-status.php" method="POST">
-
-            <input
-                type="hidden"
-                name="id"
-                value="<?= $row['id'] ?>"
-            >
-
-            <select name="status">
-
-                <option value="Menunggu"
-                <?= $row['status']=='Menunggu' ? 'selected' : '' ?>>
-                    Menunggu
-                </option>
-
-                <option value="Diproses"
-                <?= $row['status']=='Diproses' ? 'selected' : '' ?>>
-                    Diproses
-                </option>
-
-                <option value="Selesai"
-                <?= $row['status']=='Selesai' ? 'selected' : '' ?>>
-                    Selesai
-                </option>
-
-            </select>
-
-            <button type="submit">
-                Update
-            </button>
-
-        </form>
-
-    </td>
-
-    <td><?= $row['created_at'] ?></td>
-
-</tr>
-
-<?php endwhile; ?>
-
-</table>
+</div>
 
 </body>
 </html>

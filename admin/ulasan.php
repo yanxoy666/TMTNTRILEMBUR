@@ -1,7 +1,6 @@
 <?php
 session_start();
 include "../config/koneksi.php";
-include "sidebar.php";
 
 $data = $pdo->query("
 SELECT * FROM ulasan
@@ -9,31 +8,55 @@ ORDER BY id DESC
 ");
 ?>
 
-<h2>Data Ulasan</h2>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Ulasan</title>
 
-<table border="1" cellpadding="10">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/ulasan.css">
+</head>
 
-<tr>
-    <th>ID</th>
-    <th>Nama</th>
-    <th>Komentar</th>
-    <th>Tanggal</th>
-</tr>
+<body>
 
-<?php while($row = $data->fetch(PDO::FETCH_ASSOC)): ?>
+<?php include "sidebar.php"; ?>
 
-<tr>
+<div class="main">
 
-<td><?= $row['id'] ?></td>
+    <h2>⭐ Data Ulasan Pelanggan</h2>
 
-<td><?= $row['nama'] ?></td>
+    <div class="table-container">
 
-<td><?= $row['komentar'] ?></td>
+        <table>
 
-<td><?= $row['created_at'] ?></td>
+            <tr>
+                <th>ID</th>
+                <th>Nama</th>
+                <th>Komentar</th>
+                <th>Tanggal</th>
+            </tr>
 
-</tr>
+            <?php while($row = $data->fetch(PDO::FETCH_ASSOC)): ?>
 
-<?php endwhile; ?>
+            <tr>
 
-</table>
+                <td><?= $row['id'] ?></td>
+
+                <td><?= htmlspecialchars($row['nama']) ?></td>
+
+                <td><?= htmlspecialchars($row['komentar']) ?></td>
+
+                <td><?= $row['created_at'] ?></td>
+
+            </tr>
+
+            <?php endwhile; ?>
+
+        </table>
+
+    </div>
+
+</div>
+
+</body>
+</html>

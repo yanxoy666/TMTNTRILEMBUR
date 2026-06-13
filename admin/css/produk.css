@@ -1,0 +1,133 @@
+body{
+    font-family:'Segoe UI', sans-serif;
+    background:#f4f7fc;
+    margin:0;
+}
+
+.main{
+    margin-left:280px;
+    padding:30px;
+}
+
+h2{
+    color:#1b5e20;
+    margin-bottom:20px;
+}
+
+/* Tombol tambah */
+
+.btn-tambah{
+    display:inline-block;
+    text-decoration:none;
+    background:linear-gradient(90deg,#2e7d32,#43a047);
+    color:white;
+    padding:12px 20px;
+    border-radius:10px;
+    margin-bottom:20px;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.btn-tambah:hover{
+    transform:translateY(-3px);
+    box-shadow:0 5px 15px rgba(46,125,50,0.3);
+}
+
+/* Container */
+
+.table-container{
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.08);
+    overflow-x:auto;
+}
+
+/* Table */
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th{
+    background:linear-gradient(90deg,#1b5e20,#43a047);
+    color:white;
+    padding:14px;
+}
+
+td{
+    padding:12px;
+    border-bottom:1px solid #eee;
+    text-align:center;
+}
+
+tr:hover{
+    background:#f9fff9;
+}
+
+/* Foto Produk */
+
+td img{
+    width:80px;
+    height:80px;
+    object-fit:cover;
+    border-radius:10px;
+    border:2px solid #e0e0e0;
+}
+
+/* Status */
+
+.status{
+    background:#e8f5e9;
+    color:#2e7d32;
+    padding:5px 10px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:bold;
+}
+
+/* Tombol */
+
+.btn-edit{
+    background:#2196f3;
+    color:white;
+    text-decoration:none;
+    padding:7px 12px;
+    border-radius:8px;
+    margin-right:5px;
+}
+
+.btn-edit:hover{
+    background:#1976d2;
+}
+
+.btn-hapus{
+    background:#e53935;
+    color:white;
+    text-decoration:none;
+    padding:7px 12px;
+    border-radius:8px;
+}
+
+.btn-hapus:hover{
+    background:#c62828;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+    .main{
+        margin-left:90px;
+        padding:15px;
+    }
+
+    table{
+        font-size:12px;
+    }
+
+    th,td{
+        padding:8px;
+    }
+}

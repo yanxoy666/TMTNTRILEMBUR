@@ -1,56 +1,78 @@
-<?php
-session_start();
+    <?php
+    session_start();
 
-// Cek apakah ada pesan error dari proses login
-$error_message = "";
-if (isset($_SESSION['error'])) {
-    $error_message = $_SESSION['error'];
-    unset($_SESSION['error']); // Hapus pesan setelah ditampilkan
-}
-?>
+    $error_message = "";
+    if (isset($_SESSION['error'])) {
+        $error_message = $_SESSION['error'];
+        unset($_SESSION['error']);
+    }
+    ?>
 
-<!DOCTYPE html>
-<html lang="id">
-<head>
+    <!DOCTYPE html>
+    <html lang="id">
+    <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - CabaiDomba Farm</title>
-    <link rel="stylesheet" href="css/style.css">
-    <style>
-        .alert-error {
-            color: #721c24;
-            background-color: #f8d7da;
-            border: 1px solid #f5c6cb;
-            padding: 10px;
-            margin-bottom: 15px;
-            border-radius: 4px;
-        }
-    </style>
-</head>
-<body>
+    <title>Login - TumbuTani</title>
 
-    <div class="container" style="max-width: 400px; margin-top: 100px;">
-        <h2>Login CabaiDomba Farm</h2>
-        
-        <?php if (!empty($error_message)): ?>
-            <div class="alert-error">
-                <?php echo $error_message; ?>
-            </div>
-        <?php endif; ?>
+    <link rel="stylesheet" href="css/login.css">
+    </head>
 
-        <form action="proses-login.php" method="POST">
-            <div class="form-group">
-                <label>Username</label>
-                <input type="text" name="username" required class="form-control">
-            </div>
-            <div class="form-group" style="margin-top: 10px;">
-                <label>Password</label>
-                <input type="password" name="password" required class="form-control">
-            </div>
-            <button type="submit" name="login" style="margin-top: 15px;" class="btn-hero">Login</button>
-        </form>
-        <p style="margin-top: 15px;">Belum punya akun? <a href="register.php">Daftar di sini</a></p>
+    <body>
+
+    <!-- BACKGROUND ANIMATION -->
+    <div class="bg-animation">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
     </div>
 
-</body>
-</html>
+    <div class="login-box">
+
+        <div class="logo">🌱 TumbuTani</div>
+        <h2>Login Admin</h2>
+        <p class="subtitle">Masuk ke dashboard sistem</p>
+
+        <?php if (!empty($error_message)): ?>
+            <div class="alert"><?= $error_message; ?></div>
+        <?php endif; ?>
+
+        <form action="proses-login.php" method="POST" onsubmit="showLoader()">
+
+            <div class="input-box">
+                <label>Username</label>
+                <input type="text" name="username" required placeholder="Masukkan username">
+            </div>
+
+            <div class="input-box">
+                <label>Password</label>
+                <input type="password" name="password" required placeholder="Masukkan password">
+            </div>
+
+            <button type="submit" name="login"class="btn-login">
+                Login
+            </button>
+
+        </form>
+
+        <p class="footer-text">
+            Belum punya akun? <a href="register.php">Daftar</a>
+        </p>
+
+    </div>
+
+    <!-- LOADING OVERLAY -->
+    <div id="loader">
+        <div class="spinner"></div>
+        <p>Memproses login...</p>
+    </div>
+
+    <script>
+    function showLoader(){
+        document.getElementById("loader").style.display = "flex";
+    }
+    </script>
+
+    </body>
+    </html>

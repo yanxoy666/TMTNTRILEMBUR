@@ -44,45 +44,58 @@ if(isset($_POST['simpan'])){
 <html>
 <head>
     <title>Tambah Produk</title>
+
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/tambah-produk.css">
 </head>
+
 <body>
 
-<h2>Tambah Produk</h2>
+<?php include "sidebar.php"; ?>
 
-<form method="POST" enctype="multipart/form-data">
+<div class="main">
 
-    <p>Nama Produk</p>
-    <input type="text" name="name" required>
+    <div class="form-container">
 
-    <p>Harga</p>
-    <input type="number" name="price" required>
+        <h2>🌱 Tambah Produk Baru</h2>
 
-    <p>Deskripsi</p>
-    <textarea name="description" rows="5"></textarea>
+        <p class="subtitle">
+            Tambahkan produk baru ke katalog TumbuTani.
+        </p>
 
-    <p>Stok</p>
-    <input type="number" name="stock" required>
+        <form method="POST" enctype="multipart/form-data">
 
-    <p>Status</p>
-    <select name="status">
-        <option value="Ready">Ready</option>
-        <option value="Tidak Ready">Tidak Ready</option>
-    </select>
+            <label>Nama Produk</label>
+            <input type="text" name="name" required>
 
-    <p>Foto Produk</p>
-    <input type="file" name="image">
+            <label>Harga</label>
+            <input type="number" name="price" required>
 
-    <br><br>
+            <label>Deskripsi</label>
+            <textarea name="description"></textarea>
 
-    <button type="submit" name="simpan">
-        Simpan Produk
-    </button>
+            <label>Stok</label>
+            <input type="number" name="stock" required>
 
-</form>
+            <label>Status</label>
 
-<br>
+            <select name="status">
+                <option value="Ready">Ready</option>
+                <option value="Tidak Ready">Tidak Ready</option>
+            </select>
 
-<a href="produk.php">← Kembali</a>
+            <label>Foto Produk</label>
+            <input type="file" name="image">
+
+            <button type="submit" name="simpan" class="btn-simpan">
+                💾 Simpan Produk
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
 
 </body>
 </html>

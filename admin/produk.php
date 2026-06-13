@@ -1,61 +1,93 @@
 <?php
 session_start();
 include "../config/koneksi.php";
-include "sidebar.php";
 
 $stmt = $pdo->query("SELECT * FROM products ORDER BY id DESC");
 ?>
 
-<h2>Manajemen Produk</h2>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manajemen Produk</title>
 
-<a href="tambah-produk.php">+ Tambah Produk</a>
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/produk.css">
+</head>
 
-<table border="1" cellpadding="10">
-<tr>
-    <th>ID</th>
-    <th>Foto</th>
-    <th>Nama</th>
-    <th>Harga</th>
-    <th>Stok</th>
-    <th>Status</th>
-    <th>Aksi</th>
-</tr>
+<body>
 
-<?php while($row = $stmt->fetch(PDO::FETCH_ASSOC)): ?>
+<?php include "sidebar.php"; ?>
 
-<tr>
-    <td><?= $row['id'] ?></td>
+<div class="main">
 
-    <td>
-        <img src="../assets/<?= $row['image'] ?>"
-        width="80">
-    </td>
+    <h2>📦 Manajemen Produk</h2>
 
-    <td><?= $row['name'] ?></td>
+    <a href="tambah-produk.php" class="btn-tambah">
+        + Tambah Produk
+    </a>
 
-    <td>
-        Rp <?= number_format($row['price']) ?>
-    </td>
+    <div class="table-container">
 
-    <td><?= $row['stock'] ?></td>
+        <table>
 
-    <td><?= $row['status'] ?></td>
+            <tr>
+                <th>ID</th>
+                <th>Foto</th>
+                <th>Nama</th>
+                <th>Harga</th>
+                <th>Stok</th>
+                <th>Status</th>
+                <th>Aksi</th>
+            </tr>
 
-    <td>
-        <a href="edit-produk.php?id=<?= $row['id'] ?>">
-            Edit
-        </a>
+            <?php while($row = $stmt->fetch(PDO::FETCH_ASSOC)): ?>
 
-        |
+            <tr>
 
-        <a href="hapus-produk.php?id=<?= $row['id'] ?>"
-        onclick="return confirm('Hapus produk?')">
-            Hapus
-        </a>
-    </td>
+                <td><?= $row['id'] ?></td>
 
-</tr>
+                <td>
+                    <img src="../assets/<?= $row['image'] ?>" alt="">
+                </td>
 
-<?php endwhile; ?>
+                <td><?= htmlspecialchars($row['name']) ?></td>
 
-</table>
+                <td>
+                    Rp <?= number_format($row['price'],0,',','.') ?>
+                </td>
+
+                <td><?= $row['stock'] ?></td>
+
+                <td>
+                    <span class="status">
+                        <?= $row['status'] ?>
+                    </span>
+                </td>
+
+                <td>
+
+                    <a href="edit-produk.php?id=<?= $row['id'] ?>"
+                    class="btn-edit">
+                        Edit
+                    </a>
+
+                    <a href="hapus-produk.php?id=<?= $row['id'] ?>"
+                    class="btn-hapus"
+                    onclick="return confirm('Hapus produk?')">
+                        Hapus
+                    </a>
+
+                </td>
+
+            </tr>
+
+            <?php endwhile; ?>
+
+        </table>
+
+    </div>
+
+</div>
+
+</body>
+</html>
