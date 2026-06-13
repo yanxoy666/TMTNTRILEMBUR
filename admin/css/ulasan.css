@@ -1,0 +1,68 @@
+body{
+    font-family:'Segoe UI', sans-serif;
+    background:#f4f7fc;
+    margin:0;
+}
+
+.main{
+    margin-left:280px;
+    padding:30px;
+}
+
+h2{
+    color:#1b5e20;
+    margin-bottom:20px;
+}
+
+/* Container Table */
+
+.table-container{
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.08);
+    overflow-x:auto;
+}
+
+/* Table */
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th{
+    background:linear-gradient(90deg,#1b5e20,#43a047);
+    color:white;
+    padding:14px;
+}
+
+td{
+    padding:12px;
+    border-bottom:1px solid #eee;
+}
+
+tr:hover{
+    background:#f9fff9;
+}
+
+/* Komentar */
+
+td:nth-child(3){
+    text-align:left;
+    max-width:500px;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+    .main{
+        margin-left:90px;
+        padding:15px;
+    }
+
+    table{
+        font-size:12px;
+    }
+}

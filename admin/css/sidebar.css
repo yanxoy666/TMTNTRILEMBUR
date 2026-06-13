@@ -1,0 +1,93 @@
+/* ===== SIDEBAR ===== */
+
+.sidebar{
+    width:260px;
+    height:100vh;
+    position:fixed;
+    top:0;
+    left:0;
+    background:linear-gradient(180deg,#1b5e20,#2e7d32,#43a047);
+    box-shadow:5px 0 25px rgba(0,0,0,0.15);
+    padding:20px 0;
+    overflow:hidden;
+}
+
+.sidebar::before{
+    content:"";
+    position:absolute;
+    top:-50px;
+    right:-50px;
+    width:150px;
+    height:150px;
+    background:rgba(255,255,255,0.08);
+    border-radius:50%;
+}
+
+.sidebar::after{
+    content:"";
+    position:absolute;
+    bottom:-60px;
+    left:-60px;
+    width:180px;
+    height:180px;
+    background:rgba(255,255,255,0.05);
+    border-radius:50%;
+}
+
+/* ===== LOGO ===== */
+
+.logo{
+    text-align:center;
+    color:white;
+    font-size:30px;
+    font-weight:700;
+    padding:20px;
+    margin-bottom:20px;
+    letter-spacing:1px;
+    border-bottom:1px solid rgba(255,255,255,0.15);
+    position:relative;
+    z-index:2;
+}
+
+/* ===== MENU ===== */
+
+.sidebar a{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    color:white;
+    text-decoration:none;
+    margin:8px 15px;
+    padding:14px 18px;
+    border-radius:12px;
+    font-size:16px;
+    font-weight:500;
+    transition:all 0.3s ease;
+    position:relative;
+    z-index:2;
+}
+
+.sidebar a:hover{
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(5px);
+    transform:translateX(8px);
+}
+
+.sidebar a.active{
+    background:white;
+    color:#2e7d32;
+    font-weight:bold;
+    box-shadow:0 5px 15px rgba(0,0,0,0.15);
+}
+
+/* ===== LOGOUT ===== */
+
+.sidebar a:last-child{
+    margin-top:30px;
+    background:rgba(255,255,255,0.08);
+}
+
+.sidebar a:last-child:hover{
+    background:#c62828;
+    color:white;
+}
