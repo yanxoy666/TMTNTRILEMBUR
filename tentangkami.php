@@ -14,10 +14,54 @@ session_start();
     <?php include 'komponen/navbar.php'; ?>
 
     <div class="container">
-        <h2 class="section-title animate-on-scroll">Filosofi Perusahaan</h2>
-        <div style="text-align:center; max-width: 800px; margin: auto; margin-bottom: 50px;" class="animate-on-scroll">
-            <p>Warna hijau pada logo kami melambangkan dedikasi kami pada pelestarian alam dan kesuburan tanah Nusantara, sementara aksen oranye menyimbolkan semangat, inovasi, serta kualitas pedas khas Cabai Domba yang tiada duanya.</p>
+        <h2 class="section-title animate-on-scroll">Filosofi Logo</h2>
+
+        <!-- Filosofi Logo Section -->
+        <div class="logo-filosofi-wrapper animate-on-scroll">
+
+            <!-- Logo -->
+            <div class="logo-filosofi-img">
+                <img src="assets/foto/logo1.png" alt="Logo TumbuTani Nusantara">
+            </div>
+
+            <!-- Poin Filosofi -->
+            <div class="logo-filosofi-points">
+
+                <div class="filosofi-item">
+                    <div class="filosofi-icon">🌿</div>
+                    <div class="filosofi-text">
+                        <h4>Dua Daun — Pertumbuhan & Harapan</h4>
+                        <p>Dua daun di gagang skop melambangkan pertumbuhan, harapan, dan keberlanjutan. Dari kerja keras akan tumbuh kehidupan yang membawa kebaikan.</p>
+                    </div>
+                </div>
+
+                <div class="filosofi-item">
+                    <div class="filosofi-icon">⛏️</div>
+                    <div class="filosofi-text">
+                        <h4>Skop Tani — Ketekunan & Koneksi</h4>
+                        <p>Skop tani menjadi simbol ketekunan dan koneksi manusia dengan tanah sebagai sumber kehidupan.</p>
+                    </div>
+                </div>
+
+                <div class="filosofi-item">
+                    <div class="filosofi-icon">🌾</div>
+                    <div class="filosofi-text">
+                        <h4>Hasil Tani — Kekayaan Alam Indonesia</h4>
+                        <p>Hasil tani di dalam skop melambangkan kekayaan alam Indonesia serta potensi pertanian yang beragam.</p>
+                    </div>
+                </div>
+
+                <div class="filosofi-item">
+                    <div class="filosofi-icon">🤲</div>
+                    <div class="filosofi-text">
+                        <h4>Proses Panjang — Kerja Keras & Alam</h4>
+                        <p>Semua hasil terbaik lahir dari proses panjang, kerja keras, dan hubungan erat dengan alam.</p>
+                    </div>
+                </div>
+
+            </div>
         </div>
+        <!-- End Filosofi Logo -->
 
         <!-- Tangga TumbuTani Section -->
         <section class="tangga-section animate-on-scroll">
