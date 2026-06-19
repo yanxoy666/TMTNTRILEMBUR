@@ -1,30 +1,18 @@
 <footer class="footer">
     <div class="footer-content animate-on-scroll">
-        <!-- Section About / Logo -->
-        <div class="footer-section about" id="footer-section-about">
-            <div class="footer-logo">
-                <img src="assets/foto/logo1.png" alt="TumbuTani Nusantara Logo">
-            </div>
-            <p class="footer-desc">Produsen penyedia aneka macam pupuk, produk-produk pertanian dan perkebunan.</p>
-            <div class="footer-socials">
-                <a href="https://facebook.com" target="_blank" class="social-btn" aria-label="Facebook">f</a>
-                <a href="https://instagram.com" target="_blank" class="social-btn" aria-label="Instagram">ig</a>
-                <a href="https://tiktok.com" target="_blank" class="social-btn" aria-label="TikTok">tt</a>
-                <a href="pesan.php" class="social-btn" aria-label="Chat">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-square-more"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 10h.01"/><path d="M12 10h.01"/><path d="M16 10h.01"/></svg>
-                </a>
-            </div>
+        <div class="footer-section about">
+            <h3>CabaiDomba Farm</h3>
+            <p>Menghasilkan cabai domba berkualitas tinggi dengan metode pertanian modern dan berkelanjutan.</p>
         </div>
 
         <!-- Section Navigasi -->
         <div class="footer-section links" id="footer-section-links">
             <h3>Navigasi</h3>
             <ul>
-                <li><a href="index.php">&rsaquo; Home</a></li>
-                <li><a href="tentangkami.php">&rsaquo; Tentang Kami</a></li>
-                <li><a href="produk.php">&rsaquo; Produk</a></li>
-                <li><a href="galeri.php">&rsaquo; Galeri</a></li>
-                <li><a href="mitra.php">&rsaquo; Mitra</a></li>
+                <li><a href="https://wa.me/6282260067197" target="_blank">WhatsApp Kami</a></li>
+                <li><a href="https://instagram.com/tumbutani.nusantara" target="_blank">Instagram</a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=61575866347115&ref=PROFILE_EDIT_ig_profile_ac" target="_blank">Facebook</a></li>
+                <li><a href="https://www.tiktok.com/@tumbutani.nusantara">Tiktok</a></li>
             </ul>
         </div>
 
@@ -67,7 +55,7 @@
 <style>
 /* Reset override & premium styling for TumbuTani Footer */
 footer.footer {
-    background-color: #141414 !important;
+    background-color: #126d45 !important;
     color: #b0b0b0 !important;
     padding: 60px 20px 20px !important;
     font-family: 'Poppins', sans-serif !important;
