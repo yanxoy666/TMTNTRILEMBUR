@@ -60,7 +60,7 @@
         </div>
     </div>
     <div class="footer-bottom">
-        &copy;2022 - 2025. TumbuTani.Nusantara | Powered by IT Alomani Team&reg;
+        &copy;2025 - 2026. TumbuTani.Nusantara | Powered by IT Alomani Team&reg;
     </div>
 </footer>
 
