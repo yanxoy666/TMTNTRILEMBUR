@@ -170,3 +170,338 @@ body {
     .timeline-item::after { left: 21px; }
     .right { left: 0; }
 }
+/* 
+/* ==========================================
+   TANGGA TUMBUTANI (INTERACTIVE STAIRCASE)
+   ========================================== */
+.tangga-section {
+    margin: 80px auto;
+    max-width: 1100px;
+    padding: 0 20px;
+}
+
+.tangga-wrapper {
+    display: flex;
+    position: relative;
+    align-items: flex-end;
+    justify-content: flex-end;
+    min-height: 520px;
+    margin-bottom: 50px;
+}
+
+.tangga-title-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.tangga-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    display: flex;
+    flex-direction: column;
+    letter-spacing: -1px;
+}
+
+.tangga-title .text-green {
+    color: #126d45;
+}
+
+.tangga-title .text-green-light {
+    color: #2e7d32;
+    font-weight: 300;
+}
+
+.tangga-title .text-yellow {
+    color: #fbc02d;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.staircase {
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+    width: 100%;
+    height: 100%;
+}
+
+.stair-step {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.stair-step:hover {
+    transform: translateY(-8px);
+}
+
+.stair-step .step-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #444;
+    text-align: center;
+    margin-bottom: 12px;
+    min-height: 48px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    width: 100%;
+    line-height: 1.2;
+    transition: color 0.3s ease;
+}
+
+.stair-step .step-bar {
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 25px;
+    border: 3px solid transparent;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.stair-step .step-bar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(18, 109, 69, 0.3), rgba(18, 109, 69, 0.85));
+    z-index: 1;
+    transition: background 0.3s ease;
+}
+
+.stair-step:hover .step-bar::before {
+    background: linear-gradient(rgba(18, 109, 69, 0.1), rgba(18, 109, 69, 0.75));
+}
+
+.stair-step .step-number {
+    font-size: 3rem;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.95);
+    z-index: 2;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    font-family: 'Poppins', sans-serif;
+    transition: transform 0.3s ease;
+}
+
+.stair-step:hover .step-number {
+    transform: scale(1.1);
+}
+
+/* Step heights */
+.step-1 .step-bar { height: 160px; }
+.step-2 .step-bar { height: 210px; }
+.step-3 .step-bar { height: 260px; }
+.step-4 .step-bar { height: 310px; }
+.step-5 .step-bar { height: 360px; }
+.step-6 .step-bar { height: 410px; }
+.step-7 .step-bar { height: 460px; }
+
+/* Active State styling */
+.stair-step.active {
+    transform: translateY(-8px);
+}
+
+.stair-step.active .step-bar {
+    border-color: #ffd200;
+    box-shadow: 0 10px 25px rgba(18, 109, 69, 0.35);
+}
+
+.stair-step.active .step-bar::before {
+    background: linear-gradient(rgba(18, 109, 69, 0.1), rgba(18, 109, 69, 0.65));
+}
+
+.stair-step.active .step-label {
+    color: #126d45;
+    font-weight: 800;
+}
+
+/* Background images for steps */
+.stair-step .step-bar {
+    background-image: url('../assets/foto/cabai_kebun.jpg') !important;
+    background-size: cover !important;
+}
+.step-1 .step-bar { background-position: 0% center !important; }
+.step-2 .step-bar { background-position: 16.66% center !important; }
+.step-3 .step-bar { background-position: 33.33% center !important; }
+.step-4 .step-bar { background-position: 50% center !important; }
+.step-5 .step-bar { background-position: 66.66% center !important; }
+.step-6 .step-bar { background-position: 83.33% center !important; }
+.step-7 .step-bar { background-position: 100% center !important; }
+
+/* Explanation Panel */
+.step-explanation-container {
+    max-width: 900px;
+    margin: 40px auto 0;
+}
+
+.step-explanation-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 35px 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    border-left: 6px solid #126d45;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+}
+
+.step-explanation-card.fade-out {
+    opacity: 0;
+    transform: translateY(15px);
+}
+
+.explanation-icon {
+    font-size: 3rem;
+    background: rgba(18, 109, 69, 0.08);
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.03);
+}
+
+.explanation-content {
+    flex-grow: 1;
+}
+
+.explanation-title {
+    font-size: 1.35rem;
+    color: #126d45;
+    font-weight: 700;
+    margin-bottom: 8px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.explanation-text {
+    font-size: 0.98rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Responsive Styles for Stairs */
+@media screen and (max-width: 992px) {
+    .tangga-title {
+        font-size: 2.8rem;
+    }
+    .stair-step .step-label {
+        font-size: 0.75rem;
+        min-height: 40px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .tangga-wrapper {
+        display: block;
+        min-height: auto;
+        margin-bottom: 30px;
+    }
+    
+    .tangga-title-container {
+        position: static;
+        margin-bottom: 25px;
+        pointer-events: auto;
+    }
+    
+    .tangga-title {
+        font-size: 2.5rem;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .staircase {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+    
+    .stair-step {
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+        padding: 12px 18px;
+        border: 2px solid transparent;
+        transition: all 0.3s ease;
+    }
+    
+    .stair-step:hover {
+        transform: translateY(-2px);
+    }
+    
+    .stair-step .step-label {
+        text-align: left;
+        margin-bottom: 0;
+        min-height: auto;
+        justify-content: flex-start;
+        order: 2;
+        padding-left: 15px;
+        font-size: 0.95rem;
+        color: #333;
+    }
+    
+    .stair-step .step-bar {
+        width: 45px !important;
+        height: 45px !important;
+        border-radius: 50% !important;
+        padding-top: 0 !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        order: 1;
+        box-shadow: none;
+    }
+    
+    .stair-step .step-bar::before {
+        border-radius: 50%;
+    }
+    
+    .stair-step .step-number {
+        font-size: 1.4rem;
+    }
+    
+    .stair-step.active {
+        transform: translateY(-2px);
+        border-color: #ffd200;
+        box-shadow: 0 6px 15px rgba(18, 109, 69, 0.15);
+    }
+    
+    .stair-step.active .step-bar {
+        border-color: transparent;
+    }
+    
+    .step-explanation-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px;
+        gap: 15px;
+    }
+    
+    .explanation-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 2.5rem;
+    }
+}
