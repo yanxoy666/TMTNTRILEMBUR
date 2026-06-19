@@ -9,9 +9,10 @@
         <div class="footer-section links" id="footer-section-links">
             <h3>Navigasi</h3>
             <ul>
-                <li><a href="https://wa.me/6281234567890" target="_blank">WhatsApp Kami</a></li>
-                <li><a href="https://instagram.com/cabaidombafarm" target="_blank">Instagram</a></li>
-                <li><a href="https://facebook.com/cabaidombafarm" target="_blank">Facebook</a></li>
+                <li><a href="https://wa.me/6282260067197" target="_blank">WhatsApp Kami</a></li>
+                <li><a href="https://instagram.com/tumbutani.nusantara" target="_blank">Instagram</a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=61575866347115&ref=PROFILE_EDIT_ig_profile_ac" target="_blank">Facebook</a></li>
+                <li><a href="https://www.tiktok.com/@tumbutani.nusantara">Tiktok</a></li>
             </ul>
         </div>
 
