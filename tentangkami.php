@@ -14,7 +14,7 @@ session_start();
     <?php include 'komponen/navbar.php'; ?>
 
     <div class="container">
-        <h2 class="section-title animate-on-scroll">Filosofi Logo</h2>
+        <h2 class="section-title animate-on-scroll">Filosofi Logo TumbuTani.Nusantara</h2>
 
         <!-- Filosofi Logo Section -->
         <div class="logo-filosofi-wrapper animate-on-scroll">
