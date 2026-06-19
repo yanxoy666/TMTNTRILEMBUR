@@ -1,7 +1,7 @@
 <footer class="footer">
     <div class="footer-content animate-on-scroll">
         <div class="footer-section about">
-            <h3>CabaiDomba Farm</h3>
+            <h3>TumbuTani.Nusantara</h3>
             <p>Menghasilkan cabai domba berkualitas tinggi dengan metode pertanian modern dan berkelanjutan.</p>
         </div>
 
