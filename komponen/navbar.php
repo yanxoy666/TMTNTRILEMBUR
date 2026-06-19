@@ -8,7 +8,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
     <div class="logo">
         <a href="index.php">
             <img src="assets/foto/logo1.png" alt="TumbuTani Nusantara Logo" class="logo-img">
-            TumbuTani<span class="dot-nusantara">.Nusantara</span>
+            TumbuTani<div class="dot-nusantara">.Nusantara</div>
         </a>
     </div>
     <ul class="nav-links">
