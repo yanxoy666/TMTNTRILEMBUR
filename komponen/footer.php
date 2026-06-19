@@ -55,7 +55,7 @@
 <style>
 /* Reset override & premium styling for TumbuTani Footer */
 footer.footer {
-    background-color: #141414 !important;
+    background-color: #126d45 !important;
     color: #b0b0b0 !important;
     padding: 60px 20px 20px !important;
     font-family: 'Poppins', sans-serif !important;
