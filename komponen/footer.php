@@ -7,7 +7,7 @@
 
         <!-- Section Navigasi -->
         <div class="footer-section links" id="footer-section-links">
-            <h3>Navigasi</h3>
+            <h3>Sosial Media</h3>
             <ul>
                 <li><a href="https://wa.me/6282260067197" target="_blank">WhatsApp Kami</a></li>
                 <li><a href="https://instagram.com/tumbutani.nusantara" target="_blank">Instagram</a></li>
