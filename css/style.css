@@ -388,3 +388,278 @@ body {
         min-width: unset;
     }
 }
+
+
+/* ===== CSS CTA KEMITRAAN & QUICK LINKS ===== */
+.cta-kemitraan-section {
+    padding: 60px 0;
+    background-color: #f4f7f4; /* Hijau pastel sangat muda */
+    font-family: 'Poppins', sans-serif;
+}
+
+.cta-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cta-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 40px;
+    align-items: center;
+}
+
+/* Sisi Kiri - Banner */
+.cta-banner {
+    background: linear-gradient(135deg, #1e4620 0%, #2e6930 100%); /* Gradasi Hijau Daun Tua */
+    color: #ffffff;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.cta-badge {
+    display: inline-block;
+    background-color: #e8f5e9;
+    color: #2e6930;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.cta-banner h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+.cta-banner p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    color: #e0eee0;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn-cta-primary {
+    background-color: #ffaa00; /* Warna Oranye/Kuning hangat biar kontras */
+    color: #1e4620;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-cta-primary:hover {
+    background-color: #ffbe33;
+    transform: translateY(-2px);
+}
+
+.btn-cta-whatsapp {
+    background-color: #25d366; /* Warna khas WhatsApp */
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-cta-whatsapp:hover {
+    background-color: #20ba56;
+    transform: translateY(-2px);
+}
+
+/* Sisi Kanan - Quick Links */
+.cta-quick-links {
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 16px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border: 1px solid #e2e8e2;
+}
+
+.cta-quick-links h3 {
+    font-size: 1.4rem;
+    color: #1e4620;
+    margin-bottom: 10px;
+}
+
+.quick-line {
+    width: 50px;
+    height: 4px;
+    background-color: #ffaa00;
+    border-radius: 2px;
+    margin-bottom: 25px;
+}
+
+.link-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.link-item:last-child {
+    margin-bottom: 0;
+}
+
+.link-icon {
+    font-size: 1.5rem;
+    background: #e8f5e9;
+    padding: 10px;
+    border-radius: 50%;
+    line-height: 1;
+}
+
+.link-text h4 {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 3px;
+}
+
+.link-text p {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0;
+}
+
+/* ===== RESPONSIVE BREAKPOINT ===== */
+@media (max-width: 768px) {
+    .cta-grid {
+        grid-template-columns: 1fr; /* Menumpuk vertikal di HP */
+        gap: 25px;
+    }
+    
+    .cta-banner {
+        padding: 30px 20px;
+    }
+
+    .cta-banner h2 {
+        font-size: 1.6rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+    }
+    
+    .btn-cta-primary, .btn-cta-whatsapp {
+        text-align: center;
+        justify-content: center;
+    }
+}
+
+/* ===== CSS STATISTIK / COUNTER ===== */
+.stats-section {
+    background-color: #ffffff;
+    padding: 40px 0;
+    position: relative;
+    z-index: 10;
+    margin-top: -30px; /* Membuat section agak naik sedikit menimpa hero agar estetik */
+    border-radius: 16px;
+    max-width: 1100px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+.stats-container {
+    padding: 0 20px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+}
+
+.stats-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    position: relative;
+}
+
+.stats-icon {
+    font-size: 2rem;
+    background: #f0f7f0;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.stats-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.stats-number {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1e4620; /* Hijau Tua */
+    line-height: 1.2;
+}
+
+.stats-label {
+    font-size: 0.9rem;
+    color: #666666;
+    font-weight: 500;
+}
+
+/* Pembatas Garis Vertikal Antar Item (Hanya muncul di Desktop) */
+.stats-line-divider {
+    position: absolute;
+    left: 0;
+    top: 15%;
+    height: 70%;
+    width: 1px;
+    background-color: #e0e0e0;
+}
+
+/* ===== RESPONSIVE UNTUK HP & TABLET ===== */
+@media (max-width: 992px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr); /* Jadi 2 kolom di tablet */
+        gap: 30px 0;
+    }
+    
+    /* Sembunyikan garis pembatas bawaan desktop agar tidak berantakan */
+    .stats-line-divider {
+        display: none;
+    }
+}
+
+@media (max-width: 576px) {
+    .stats-section {
+        margin-top: 20px; /* Kembalikan margin normal di HP agar tidak menabrak */
+        padding: 30px 0;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr; /* Jadi 1 kolom memanjang di HP */
+        gap: 25px;
+    }
+    
+    .stats-item {
+        justify-content: flex-start;
+        padding-left: 20%; /* Biar posisi ikon agak ke tengah rata kiri */
+    }
+}

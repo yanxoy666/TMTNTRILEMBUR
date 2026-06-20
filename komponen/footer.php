@@ -1,7 +1,7 @@
 <footer class="footer">
     <div class="footer-content animate-on-scroll">
         <div class="footer-section about">
-            <h3>CabaiDomba Farm</h3>
+            <h3>TumbuTani.Nusantara</h3>
             <p>Menghasilkan cabai domba berkualitas tinggi dengan metode pertanian modern dan berkelanjutan.</p>
         </div>
 
@@ -48,7 +48,7 @@
         </div>
     </div>
     <div class="footer-bottom">
-        &copy;2022 - 2025. TumbuTani.Nusantara | Powered by IT Alomani Team&reg;
+        &copy;2025 - 2026. TumbuTani.Nusantara | Powered by IT Alomani Team&reg;
     </div>
 </footer>
 

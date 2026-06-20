@@ -6,11 +6,13 @@ $current_page = basename($_SERVER['PHP_SELF']);
 ?>
 <nav class="navbar">
     <div class="logo">
-        <a href="index.php">
-            <img src="assets/foto/logo1.png" alt="TumbuTani Nusantara Logo" class="logo-img">
-            TumbuTani<div class="dot-nusantara">.Nusantara</div>
-        </a>
-    </div>
+    <a href="index.php">
+        <img src="assets/foto/logo1.png" alt="TumbuTani Nusantara Logo" class="logo-img">
+        <span class="brand-name">
+            TumbuTani<span class="dot-nusantara">.Nusantara</span>
+        </span>
+    </a>
+</div>
     <ul class="nav-links">
         <li><a href="index.php" class="<?= $current_page == 'index.php' ? 'active' : '' ?>">Beranda</a></li>
         <li><a href="tentangkami.php" class="<?= $current_page == 'tentangkami.php' ? 'active' : '' ?>">Tentang Kami</a></li>
@@ -75,8 +77,17 @@ nav.navbar .logo a:hover .logo-img {
     transform: scale(1.08) rotate(-3deg);
 }
 
-nav.navbar .logo .dot-nusantara {
-    color: #ffd200 !important;
+.brand-name{
+    color:#ffffff !important;
+    display:inline-flex;
+    align-items:center;
+    white-space:nowrap;
+    line-height:1;
+    font-weight:700;
+}
+
+.dot-nusantara{
+    color:#ffd200 !important;
 }
 
 nav.navbar .nav-links {
