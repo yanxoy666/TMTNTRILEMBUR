@@ -1,6 +1,9 @@
 <footer class="footer">
     <div class="footer-content animate-on-scroll">
         <div class="footer-section about">
+            <div class="footer-logo">
+                <img src="assets/foto/logo1.png" alt="TumbuTani Nusantara Logo">
+            </div>
             <h3>TumbuTani.Nusantara</h3>
             <p>Menghasilkan cabai domba berkualitas tinggi dengan metode pertanian modern dan berkelanjutan.</p>
         </div>
@@ -53,14 +56,31 @@
 </footer>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@700;800&display=swap');
+
 /* Reset override & premium styling for TumbuTani Footer */
 footer.footer {
-    background-color: #126d45 !important;
-    color: #b0b0b0 !important;
-    padding: 60px 20px 20px !important;
-    font-family: 'Poppins', sans-serif !important;
+    background: linear-gradient(135deg, #0B5836 0%, #126D45 100%) !important;
+    color: rgba(255, 255, 255, 0.7) !important;
+    padding: 40px 20px 16px !important;
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
     position: relative;
     overflow: hidden;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+footer.footer::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: rgba(255, 213, 79, 0.04);
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: 0;
 }
 
 footer.footer .footer-content {
@@ -71,6 +91,8 @@ footer.footer .footer-content {
     margin: auto !important;
     opacity: 1 !important;
     transform: none !important;
+    position: relative;
+    z-index: 1;
 }
 
 @media screen and (max-width: 768px) {
@@ -82,39 +104,44 @@ footer.footer .footer-content {
 
 /* Footer Section Styling */
 footer.footer .footer-section {
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
-    border-radius: 8px;
-    padding: 15px;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    border-radius: 16px;
+    padding: 12px 16px;
     cursor: pointer;
     user-select: none;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.04);
 }
 
 footer.footer .footer-section:hover {
-    background: rgba(255, 255, 255, 0.02);
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.08);
+    transform: translateY(-2px);
 }
 
 /* Titles */
 footer.footer .footer-section h3 {
-    margin-bottom: 25px !important;
+    margin-bottom: 15px !important;
     color: #ffffff !important;
-    font-size: 1.25rem !important;
-    font-weight: 700 !important;
-    letter-spacing: 0.5px;
+    font-size: 1.2rem !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px;
+    font-family: 'Outfit', sans-serif !important;
 }
 
 /* Logo container styling */
 footer.footer .footer-logo {
-    width: 76px;
-    height: 76px;
+    width: 56px;
+    height: 56px;
     background: #ffffff;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 10px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    padding: 6px;
+    margin-bottom: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 footer.footer .footer-logo:hover {
@@ -130,8 +157,8 @@ footer.footer .footer-logo img {
 footer.footer .footer-desc {
     font-size: 0.95rem !important;
     line-height: 1.6 !important;
-    color: #cccccc !important;
-    margin-bottom: 25px !important;
+    color: rgba(255, 255, 255, 0.8) !important;
+    margin-bottom: 15px !important;
     max-width: 340px;
 }
 
@@ -142,9 +169,9 @@ footer.footer .footer-socials {
 }
 
 footer.footer .social-btn {
-    width: 40px;
-    height: 40px;
-    background-color: #2a2a2a;
+    width: 42px;
+    height: 42px;
+    background-color: rgba(255, 255, 255, 0.08);
     color: #ffffff !important;
     border-radius: 50%;
     display: inline-flex;
@@ -153,23 +180,30 @@ footer.footer .social-btn {
     text-decoration: none !important;
     font-weight: 600;
     font-size: 1rem;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     position: relative;
     overflow: hidden;
     cursor: pointer;
 }
 
 footer.footer .social-btn:hover {
-    background-color: #3d3d3d;
+    background-color: #FFD54F;
+    color: #0B5836 !important;
     transform: translateY(-4px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 20px rgba(255, 213, 79, 0.25);
 }
 
 footer.footer .social-btn svg {
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
     stroke: #ffffff;
     stroke-width: 2.5;
+    transition: stroke 0.3s ease;
+}
+
+footer.footer .social-btn:hover svg {
+    stroke: #0B5836 !important;
 }
 
 /* Navigation List */
@@ -184,17 +218,17 @@ footer.footer .footer-section.links ul li {
 }
 
 footer.footer .footer-section.links ul a {
-    color: #b0b0b0 !important;
+    color: rgba(255, 255, 255, 0.7) !important;
     text-decoration: none !important;
     font-size: 0.95rem !important;
-    transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     display: inline-block;
     padding: 2px 0;
 }
 
 footer.footer .footer-section.links ul a:hover {
-    color: #ffffff !important;
-    transform: translateX(8px);
+    color: #FFD54F !important;
+    transform: translateX(6px);
 }
 
 /* Address & Contact List */
@@ -206,13 +240,13 @@ footer.footer .contact-list {
 
 footer.footer .contact-item {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 12px;
     font-size: 0.95rem;
     line-height: 1.5;
-    color: #b0b0b0;
+    color: rgba(255, 255, 255, 0.7);
     cursor: pointer;
-    transition: transform 0.2s ease, color 0.2s ease;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 footer.footer .contact-item:hover {
@@ -229,24 +263,43 @@ footer.footer .icon-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 3px;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.08);
     flex-shrink: 0;
-    transition: transform 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+footer.footer .contact-item:hover .icon-container {
+    background: #FFD54F;
+    transform: scale(1.08);
+}
+
+footer.footer .contact-item svg {
+    stroke: rgba(255, 255, 255, 0.9) !important;
+    transition: stroke 0.3s ease;
+}
+
+footer.footer .contact-item:hover svg {
+    stroke: #0B5836 !important;
 }
 
 footer.footer .contact-icon {
-    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Copyright Footer Bottom */
 footer.footer .footer-bottom {
     text-align: center !important;
-    padding: 25px 20px 0 !important;
+    padding: 16px 20px 0 !important;
     background-color: transparent !important;
-    border-top: 1px solid rgba(255, 255, 255, 0.07) !important;
-    margin-top: 40px !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+    margin-top: 24px !important;
     font-size: 0.85rem !important;
-    color: #888888 !important;
+    color: rgba(255, 255, 255, 0.5) !important;
+    position: relative;
+    z-index: 1;
 }
 
 /* Animation Keyframes */
