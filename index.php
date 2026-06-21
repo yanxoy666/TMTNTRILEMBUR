@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TumbuTani.Nusantara - Pertanian Modern</title>
-    <link rel="stylesheet" href="css/style.css?v=6">
+    <link rel="stylesheet" href="css/style.css?v=8">
 </head>
 <?php
 session_start();
@@ -141,24 +141,58 @@ session_start();
     <div class="container">
         <h2 class="section-title animate-on-scroll">Mengapa Memilih TumbuTani Nusantara</h2>
         <div class="grid-cards">
-            <div class="card animate-on-scroll">
-                <div class="card-body">
-                    <h3 class="card-title">🌱 Visi dan Pertumbuhan Jangka Panjang</h3>
-                    <p>Kami menyeleksi bibit cabai domba secara ketat untuk menghasilkan panen yang melimpah dan tahan cuaca ekstrem.</p>
+            
+            <!-- Feature Card 1 -->
+            <div class="feature-card animate-on-scroll">
+                <div class="feature-icon-wrapper">
+                    <svg class="feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M2 22h20"/>
+                        <path d="M12 22V12"/>
+                        <path d="M12 12c-4.42 0-8-3.58-8-8V2c4.42 0 8 3.58 8 8v12Z"/>
+                        <path d="M12 15c3.31 0 6-2.69 6-6V7c-3.31 0-6 2.69-6 6v2Z"/>
+                    </svg>
                 </div>
+                <h3 class="feature-card-title">Visi & Pertumbuhan Jangka Panjang</h3>
+                <p class="feature-card-desc">Kami menyeleksi bibit cabai domba secara ketat untuk menghasilkan panen yang melimpah dan tahan cuaca ekstrem.</p>
             </div>
-            <div class="card animate-on-scroll">
-                <div class="card-body">
-                    <h3 class="card-title">⚙️ Pertanian Modern</h3>
-                    <p>Memanfaatkan teknologi irigasi cerdas dan pemantauan kualitas tanah secara berkala.</p>
+
+            <!-- Feature Card 2 -->
+            <div class="feature-card animate-on-scroll">
+                <div class="feature-icon-wrapper">
+                    <svg class="feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="3"/>
+                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                    </svg>
                 </div>
+                <h3 class="feature-card-title">Pertanian Modern</h3>
+                <p class="feature-card-desc">Memanfaatkan teknologi irigasi cerdas dan pemantauan kualitas tanah secara berkala guna menjamin kualitas prima.</p>
             </div>
-            <div class="card animate-on-scroll">
-                <div class="card-body">
-                    <h3 class="card-title">🤝 Pemberdayaan Petani</h3>
-                    <p>Bekerja sama dengan petani lokal untuk memajukan kesejahteraan dan ekosistem pertanian daerah.</p>
+
+            <!-- Feature Card 3 -->
+            <div class="feature-card animate-on-scroll">
+                <div class="feature-icon-wrapper">
+                    <svg class="feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                        <circle cx="9" cy="7" r="4"/>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                    </svg>
                 </div>
+                <h3 class="feature-card-title">Pemberdayaan Petani</h3>
+                <p class="feature-card-desc">Bekerja sama dengan petani lokal untuk memajukan kesejahteraan dan ekosistem pertanian daerah secara berkelanjutan.</p>
             </div>
+
+        </div>
+
+        <div class="explore-more-cta animate-on-scroll">
+            <span>Ingin mengenal visi & perjalanan kami lebih dalam?</span>
+            <a href="tentangkami.php" class="btn-explore-more">
+                Pelajari Tentang Kami 
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+            </a>
         </div>
     </div>
 
