@@ -213,7 +213,7 @@ session_start();
                     <div class="link-icon">✉️</div>
                     <div class="link-text">
                         <h4>Email Resmi</h4>
-                        <p>kontak@tumbutani.nusantara</p>
+                        <p>tumbutaninusantara@gmail.com</p>
                     </div>
                 </div>
 
